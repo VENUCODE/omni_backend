@@ -9,8 +9,8 @@ app.use(cors());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.get("/", function(req, res) {
-    res.json({ "status": "server is running" });
+app.get("/", function (req, res) {
+  res.json({ status: "server is running" });
 });
 
 //Routes
@@ -20,7 +20,6 @@ app.use("/user", userRoutes);
 //prediciton routes
 const PredicitonRoutes = require("./routes/prediction.route");
 app.use("/predictions", PredicitonRoutes);
-
 
 const mongoUri = process.env.MONGO_URL;
 mongoose
